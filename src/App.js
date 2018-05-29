@@ -213,8 +213,8 @@ class App extends Component {
           <RangeSetting
             name='rotate'
             property={rotate}
-            min="-100"
-            max="100"
+            min="-20"
+            max="20"
             changeHandler={this.handleChange}
           />
 
