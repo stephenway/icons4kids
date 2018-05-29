@@ -1,0 +1,23 @@
+{
+  "name": "css4kids",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://stephenway.github.io/icons4kids",
+  "dependencies": {
+    "gh-pages": "^1.1.0",
+    "nodemailer": "^4.6.5",
+    "react": "^16.4.0",
+    "react-color": "^2.14.1",
+    "react-dom": "^16.4.0",
+    "react-emojione": "^5.0.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
