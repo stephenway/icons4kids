@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { SwatchesPicker } from 'react-color';
 import './App.css';
 import EmojiButton from './components/EmojiButton';
 import RangeSetting from './components/RangeSetting';
+import SwatchSetting from './components/SwatchSetting';
 
 class App extends Component {
   constructor(props) {
@@ -154,37 +154,27 @@ class App extends Component {
             />
           </div>
 
-          <div>color shade:&nbsp;
-            <div className='swatch' onClick={ this.handleShadeClick }>
-              <div className='swatchColor' style={{ background: this.state.backgroundColor }} />
-            </div>
-            { this.state.backgroundColorToggle ?
-              <div className="popover">
-                <div className="cover" onClick={this.handleShadeClose} />
-                <SwatchesPicker
-                  color={backgroundColor}
-                  name='backgroundColor'
-                  onChangeComplete={ this.handleChangeComplete }
-                />
-              </div>:
-              null}
-          </div>
+          <SwatchSetting
+            name="color shade"
+            property={backgroundColor}
+            propName="backgroundColor"
+            changeHandler={this.handleChangeComplete}
+            clickHandler={this.handleShadeClick}
+            closeHandler={this.handleShadeClose}
+            stateToggle={this.state.backgroundColorToggle}
+            stateColor={this.state.backgroundColor}
+          />
 
-          <div>border line:&nbsp;
-            <div className='swatch' onClick={ this.handleLineClick }>
-              <div className='swatchColor' style={{ background: this.state.borderColor }} />
-            </div>
-            { this.state.borderColorToggle ?
-              <div className="popover">
-                <div className="cover" onClick={this.handleLineClose} />
-                <SwatchesPicker
-                  color={borderColor}
-                  name='borderColor'
-                  onChangeComplete={ this.handleChangeLineComplete }
-                />
-              </div>:
-              null}
-          </div>
+          <SwatchSetting
+            name="border line"
+            property={borderColor}
+            propName="borderColor"
+            changeHandler={this.handleChangeComplete}
+            clickHandler={this.handleLineClick}
+            closeHandler={this.handleLineClose}
+            stateToggle={this.state.borderColorToggle}
+            stateColor={this.state.borderColor}
+          />
 
           <RangeSetting
             name='line thickness'
