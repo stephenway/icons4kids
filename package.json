@@ -4,13 +4,16 @@
   "private": true,
   "homepage": "https://stephenway.github.io/icons4kids",
   "dependencies": {
+    "create-react-class": "^15.6.3",
     "gh-pages": "^1.1.0",
     "nodemailer": "^4.6.5",
+    "rc-slider": "^8.6.1",
     "react": "^16.4.0",
     "react-color": "^2.14.1",
     "react-dom": "^16.4.0",
     "react-emojione": "^5.0.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-tappable": "^1.0.4"
   },
   "scripts": {
     "predeploy": "npm run build",

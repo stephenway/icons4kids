@@ -1,17 +1,26 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {emojify} from 'react-emojione';
+import Tappable from 'react-tappable';
+import Emojify, {emojify} from 'react-emojione';
 
-const EmojiButton = ({name, changeHandler}) => {
+const EmojiButton = ({name, changeHandler, onTap}) => {
   return (
-    <button
-      className="emojiButton"
-      onClick={changeHandler}
-      name="emoji"
-      value={emojify(`:${name}:`, {output: 'unicode'})}
-    >
-      {emojify(`:${name}:`)}
-    </button>
+    <Tappable onTap={changeHandler}>
+      <button
+        className="emojiButton"
+        onClick={changeHandler}
+        name="emoji"
+        value={emojify(`:${name}:`, {output: 'unicode'})}
+      >
+        {(name) &&
+          <Emojify
+            onTouchStart={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {`:${name}:`}
+          </Emojify>}
+      </button>
+    </Tappable>
   );
 }
 

@@ -27,11 +27,12 @@ class App extends Component {
       borderColorToggle: false,
       borderWidth: 10,
       borderStyle: 'solid',
-      borderRadius: '15',
+      borderRadius: 15,
       rotate: -5,
       size: 200,
       log: true,
       text: '',
+      emoji: '',
     };
   }
 
@@ -169,7 +170,7 @@ class App extends Component {
             name="border line"
             property={borderColor}
             propName="borderColor"
-            changeHandler={this.handleChangeComplete}
+            changeHandler={this.handleChangeLineComplete}
             clickHandler={this.handleLineClick}
             closeHandler={this.handleLineClose}
             stateToggle={this.state.borderColorToggle}
@@ -180,7 +181,7 @@ class App extends Component {
             name='line thickness'
             property={borderWidth}
             propName='borderWidth'
-            max="20"
+            max={20}
             changeHandler={this.handleChange}
           />
 
@@ -188,23 +189,23 @@ class App extends Component {
             name='roundness'
             property={borderRadius}
             propName='borderRadius'
-            max="50"
+            max={50}
             changeHandler={this.handleChange}
           />
 
           <RangeSetting
             name='size'
             property={size}
-            min="25"
-            max="350"
+            min={25}
+            max={350}
             changeHandler={this.handleChange}
           />
 
           <RangeSetting
             name='rotate'
             property={rotate}
-            min="-20"
-            max="20"
+            min={-20}
+            max={20}
             changeHandler={this.handleChange}
           />
 
